@@ -44,6 +44,15 @@ export class HomePage {
   public login(){
     if(this.formLogin.valid){
 
+      let email = this.formLogin.value.email;
+      let senha = this.formLogin.value.senha;
+
+      if(email == "admin@admin.com" && senha == "123456") {
+
+      }else{
+        this.alertUserInvalid();
+      }
+
     }else{
       this.alertFormInvalid();
     }
@@ -53,6 +62,16 @@ export class HomePage {
     const alert = await this.alertController.create({
       header: 'Erro!!!',
       message: 'Formulario invalido, confira os dados!',
+      buttons: ['Ok']
+    });
+
+    await alert.present();
+  }
+
+  async alertUserInvalid(){
+    const alert = await this.alertController.create({
+      header: 'Erro!!!',
+      message: 'E-mail/Senha invalidos, confira os dados!',
       buttons: ['Ok']
     });
 
