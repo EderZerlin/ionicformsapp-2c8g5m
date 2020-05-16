@@ -18,14 +18,13 @@ export class HomePage {
 
   public formLogin: FormGroup;
 
-  constructor() {
+  constructor(public formBuilder: FormBuilder) {
 
     // Monta formularios
-    this.formLogin = formulario.group({
+    this.formLogin = formBuilder.group({
       // Declara os campos do formulario.
       email: ['', Validators.compose([Validators.email, Validators.required])],
-      senha: []
-    })
+      senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])]
+    });
   }
-
 }
