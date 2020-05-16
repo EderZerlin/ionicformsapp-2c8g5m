@@ -16,6 +16,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HomePage {
 
-  constructor() {}
+  public formLogin: FormGroup;
+
+  constructor() {
+
+    // Monta formularios
+    this.formLogin = formulario.group({
+      // Declara os campos do formulario.
+      email: ['', Validators.compose([Validators.email, Validators.required])],
+      senha: []
+    })
+  }
 
 }
