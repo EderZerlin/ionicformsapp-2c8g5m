@@ -18,6 +18,18 @@ export class HomePage {
 
   public formLogin: FormGroup;
 
+  public mensagens_validacao = {
+    email:[
+      { tipo: 'required', mensagem: 'O campo e-mail e obrigatorio' },
+      { tipo: 'email', mensagem: 'E-mail invalido!'},
+    ],
+    senha: [
+      { tipo: 'required', mensagem: 'E obrigatorio digitar a senha' },
+      { tipo: 'minLength', mensagem: 'A senha deve ter pelo o menos 6 carcacteres.' },
+      { tipo: 'maxLength', mensagem: 'A senha deve ter no maximo 8 caracteres.' }
+    ]
+  };
+
   constructor(public formBuilder: FormBuilder) {
 
     // Monta formularios
