@@ -49,7 +49,7 @@ export class HomePage {
       let senha = this.formLogin.value.senha;
 
       if(email == "admin@admin.com" && senha == "123456") {
-
+        this.router.navigateByUrl('painel-usuario');
       }else{
         this.alertUserInvalid();
       }
