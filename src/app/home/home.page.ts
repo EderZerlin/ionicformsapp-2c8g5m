@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 //Importacoes necessarias para formularios
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -31,7 +32,7 @@ export class HomePage {
     ]
   };
 
-  constructor(public formBuilder: FormBuilder, public alertController: AlertController) {
+  constructor(public formBuilder: FormBuilder, public alertController: AlertController, public router: Router) {
 
     // Monta formularios
     this.formLogin = formBuilder.group({
