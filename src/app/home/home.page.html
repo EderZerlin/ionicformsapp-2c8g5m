@@ -19,7 +19,7 @@
       <ion-item>
         <ion-label position="stacked">E-mail</ion-label>
         <ion-input formControlName="email" type="email"></ion-input>
-        <ng-container>
+        <ng-container *ngFor="let erro of mensagens_validacao.email"> 
           <span
             *ngIf="formLogin.get('email').hasError(erro.tipo) && (formLogin.get('email').dirty || formLogin.get('email'.touched)"
             class="msg-erro">
