@@ -45,7 +45,7 @@ export class HomePage {
     if(this.formLogin.valid){
 
     }else{
-
+      this.alertFormInvalid();
     }
   }
 
