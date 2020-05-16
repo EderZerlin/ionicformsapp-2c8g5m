@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Sistema Etec</ion-card-title>
+    </ion-card-header>
+
+    <form [formGroup]="formLogin"(ngSubmit)="login()>
+
+      <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input formControlName="senha" type="password"></ion-input>
+      </ion-item>
+
+      <br>
+
+      <ion-button expand="block" color"primary" type="submit">LOGIN!</ion-button>
+      <ion-button expand="block" fill="outLine" color="primary" routerLink="/criar-conta">CRIAR CONTA</ion-button>
+
+    </form>
+  </ion-card>
+</ion-content>
