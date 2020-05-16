@@ -21,7 +21,7 @@
         <ion-input formControlName="email" type="email"></ion-input>
         <ng-container *ngFor="let erro of mensagens_validacao.email"> 
           <span
-            *ngIf="formLogin.get('email').hasError(erro.tipo) && (formLogin.get('email').dirty || formLogin.get('email'.touched)"
+            *ngIf="formLogin.get('email').hasError(erro.tipo) && (formLogin.get('email').dirty || formLogin.get('email').touched)"
             class="msg-erro">
             {{erro.mensagem}}
           </span>
@@ -31,6 +31,13 @@
       <ion-item>
         <ion-label position="stacked">Senha</ion-label>
         <ion-input formControlName="senha" type="password"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.senha"> 
+          <span
+            *ngIf="formLogin.get('senha').hasError(erro.tipo) && (formLogin.get('senha').dirty || formLogin.get('senha').touched)"
+            class="msg-erro">
+            {{erro.mensagem}}
+          </span>
+        </ng-container>
       </ion-item>
 
       <br>
