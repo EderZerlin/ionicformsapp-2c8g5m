@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 //Importacoes necessarias para formularios
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -30,7 +31,7 @@ export class HomePage {
     ]
   };
 
-  constructor(public formBuilder: FormBuilder) {
+  constructor(public formBuilder: FormBuilder, public alertController: AlertController) {
 
     // Monta formularios
     this.formLogin = formBuilder.group({
@@ -38,5 +39,23 @@ export class HomePage {
       email: ['', Validators.compose([Validators.email, Validators.required])],
       senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])]
     });
+  }
+
+  public login(){
+    if(this.formLogin.valid){
+
+    }else{
+
+    }
+  }
+
+  async alertFormInvalid(){
+    const alert = await this.alertController.create({
+      header: 'Erro!!!',
+      message: 'Formulario invalido, confira os dados!',
+      buttons: ['Ok']
+    });
+
+    await alert.present();
   }
 }
